@@ -12,6 +12,6 @@ describe("end to end test of Ecommerce website",()=>{
         cy.get('#terms').check();
         cy.get('#signInBtn').click();
         cy.wait(4000);
-        cy.url().should('include','shop');
+        cy.url().should('include','shop');// after switching next tab
     })
 })

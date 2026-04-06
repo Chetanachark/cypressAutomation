@@ -32,7 +32,7 @@ describe("GreenCart E2E test",()=>{
         cy.get('.chkAgree').check().should('be.checked');
         
         //static dropdown
-        cy.get('select').select(['Andorra']).should('have.value','Andorra');
+        cy.get('select').select(['Andorra','']).should('have.value','Andorra');
         
     }) 
     
