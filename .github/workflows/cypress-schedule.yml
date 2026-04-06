@@ -17,4 +17,4 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Run Cypress Tests
-        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
+        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --ci-build-id $GITHUB_RUN_ID
