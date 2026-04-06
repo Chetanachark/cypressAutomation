@@ -8,7 +8,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    specPattern:"cypress/integration/examples/*.js",
+    specPattern:"cypress/integration/**/*.js",
     retries: {
       runMode: 2,
       openMode: 0
