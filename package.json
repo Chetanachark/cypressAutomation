@@ -1,0 +1,19 @@
+{
+  "name": "cypressautomation",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+ "scripts": {
+  "cy:chrome": "cypress run --browser chrome --record --parallel --group chrome --ci-build-id local-build-1 --key 0427a74f-ce8e-4265-81d6-2bcfe9c5377d",
+  "cy:edge": "cypress run --browser edge --record --parallel --group edge --ci-build-id local-build-1 --key 0427a74f-ce8e-4265-81d6-2bcfe9c5377d",
+  "cy:parallel": "concurrently \"npm run cy:chrome\" \"npm run cy:edge\""
+},
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "cypress": "^15.13.0",
+    "cypress-iframe": "^1.0.1"
+  }
+}
