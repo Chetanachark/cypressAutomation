@@ -2,7 +2,7 @@ name: Cypress Scheduled Run
 
 on:
   schedule:
-    - cron: '30 0 * * *'  # 6:00 AM IST = 00:30 UTC
+    - cron: '45 11 * * *'  # runs daily at 5:15 PM IST
   workflow_dispatch:     # optional manual run
 
 jobs:
