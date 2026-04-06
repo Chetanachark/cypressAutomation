@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         node-version: [18.16.0]   # Node version(s)
-        runner: [1, 2, 3]          # 3 parallel runners (adjust as needed)
+        runner: [1, 2, 3, 4]          # 3 parallel runners (adjust as needed)
     steps:
       - uses: actions/checkout@v3
 
