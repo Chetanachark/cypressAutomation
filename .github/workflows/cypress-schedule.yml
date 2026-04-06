@@ -3,18 +3,25 @@ name: Cypress Scheduled Run
 on:
   schedule:
     - cron: '45 11 * * *'  # runs daily at 5:15 PM IST
-  workflow_dispatch:     # optional manual run
+  workflow_dispatch:       # optional manual run
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.16.0]   # Node version(s)
+        runner: [1, 2, 3]          # 3 parallel runners (adjust as needed)
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.16.0
+          node-version: ${{ matrix.node-version }}
+
       - name: Install Dependencies
         run: npm ci
-      - name: Run Cypress Tests
-        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }} 
+
+      - name: Run Cypress Tests in Parallel
+        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --ci-build-id ${{ github.run_id }}
