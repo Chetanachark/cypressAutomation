@@ -2,7 +2,7 @@ name: Cypress Scheduled Run
 
 on:
   schedule:
-    - cron: '15 12 * * *'
+    - cron: '15 12 * * *'  # 5:45 PM IST
   workflow_dispatch:
 
 jobs:
@@ -21,16 +21,24 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Clean Old Reports
+        run: rm -rf cypress/reports/json/* merged.json || true
+
       - name: Run Cypress Tests (Record + Mochawesome)
-        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=false,json=true
+        run: |
+          npx cypress run \
+            --record \
+            --key ${{ secrets.CYPRESS_RECORD_KEY }} \
+            --reporter mochawesome \
+            --reporter-options reportDir=cypress/reports/json,overwrite=false,html=false,json=true
 
       - name: Debug - List Report Files
         run: |
           echo "Listing report directory"
-          ls -R cypress
+          ls -R cypress/reports
 
       - name: Merge Mochawesome JSON Reports
-        run: npx mochawesome-merge "cypress/reports/*.json" -o merged.json
+        run: npx mochawesome-merge "cypress/reports/json/*.json" -o merged.json
 
       - name: Generate Final HTML Report
         run: npx marge merged.json --reportDir cypress/reports --reportFilename final-report

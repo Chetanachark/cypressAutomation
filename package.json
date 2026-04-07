@@ -8,8 +8,8 @@
   "main": "index.js",
  "scripts": {
   "clean:reports": "rimraf cypress/reports/*.json merged.json",
-  "cy:run": "cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=false,json=true",
-  "mocha:merge": "mochawesome-merge \"cypress/reports/*.json\" -o merged.json",
+ "cy:run": "cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports/json,overwrite=false,html=false,json=true",
+ "mocha:merge": "mochawesome-merge \"cypress/reports/*.json\" -o merged.json",
   "mocha:report": "marge merged.json --reportDir cypress/reports --reportFilename final-report",
   "cy:report": "npm run mocha:merge && npm run mocha:report",
   "clean:reports": "rimraf cypress/reports merged.json",

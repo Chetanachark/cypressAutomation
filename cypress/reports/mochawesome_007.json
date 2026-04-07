@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-07T08:04:32.929Z",
-    "end": "2026-04-07T08:04:43.962Z",
-    "duration": 11033,
+    "start": "2026-04-07T08:22:44.440Z",
+    "end": "2026-04-07T08:22:55.124Z",
+    "duration": 10684,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "01900689-1271-4274-bfc7-9f13c6cd93b8",
+      "uuid": "9a5a97f8-ce58-4ce5-abee-e85658681583",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\login.js",
       "file": "cypress\\integration\\examples\\login.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d865030b-4f30-4b9e-bd5f-a529cbbb01d1",
+          "uuid": "fbce2b95-8e21-4f0f-811f-b4cc1bc05582",
           "title": "end to end test of Ecommerce website",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "End to end Ec commerce functionality",
               "fullTitle": "end to end test of Ecommerce website End to end Ec commerce functionality",
               "timedOut": null,
-              "duration": 9610,
+              "duration": 9209,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.get(\"#username\").type('rahulshettyacademy');\ncy.get(\"#password\").type('Learning@830$3mK2');\ncy.contains('label', 'Admin').click();\ncy.get('select').select('Student');\ncy.get('#terms').check();\ncy.get('#signInBtn').click();\ncy.wait(4000);\ncy.url().should('include', 'shop'); // after switching next tab",
               "err": {},
-              "uuid": "d1cd7c34-4992-419a-8ae3-d4195e29b504",
-              "parentUUID": "d865030b-4f30-4b9e-bd5f-a529cbbb01d1",
+              "uuid": "77127c0f-72b4-4271-9960-e08203612fdf",
+              "parentUUID": "fbce2b95-8e21-4f0f-811f-b4cc1bc05582",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d1cd7c34-4992-419a-8ae3-d4195e29b504"
+            "77127c0f-72b4-4271-9960-e08203612fdf"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9610,
+          "duration": 9209,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

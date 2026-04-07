@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-07T08:03:24.668Z",
-    "end": "2026-04-07T08:03:46.664Z",
-    "duration": 21996,
+    "start": "2026-04-07T08:21:35.756Z",
+    "end": "2026-04-07T08:21:56.002Z",
+    "duration": 20246,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "3f5f580f-adde-42e0-8325-31bf161dc43c",
+      "uuid": "29fab74f-55e5-4e9b-8a0b-d50d2729097c",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\eComAlltem.js",
       "file": "cypress\\integration\\examples\\eComAlltem.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "4eec13e2-c0be-44db-bdca-4ab076ab3801",
+          "uuid": "ec9dbd72-49bc-4b56-ab97-cd9f64fcc6f7",
           "title": "end to end test of Ecommerce website",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "End to end Ec commerce functionality",
               "fullTitle": "end to end test of Ecommerce website End to end Ec commerce functionality",
               "timedOut": null,
-              "duration": 19838,
+              "duration": 18882,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.get(\"#username\").type('rahulshettyacademy');\ncy.get(\"#password\").type('Learning@830$3mK2');\ncy.contains('label', 'Admin').click();\ncy.get('select').select('Student');\ncy.get('#terms').check();\ncy.get('#signInBtn').click();\ncy.wait(4000);\ncy.url().should('include', 'shop');\n//Verifing shop page\ncy.get('h1.my-4').should('have.text', 'Shop Name');\ncy.get('.card.h-100').find('.btn').each(($e1, index, $list) => {\n  cy.wrap($e1).click();\n});\ncy.get('.btn-primary').invoke('text').then(text => {\n  const number = text.match(/\\d+/)[0]; // extracts digits\n  cy.get('.btn-primary').click();\n  for (let i = 0; i < number; i++) {\n    cy.get('tbody tr').eq(i).find('.text-success').should('contain', 'In Stock');\n  }\n});\ncy.get(\".text-right\").invoke('text').then(text => {\n  const totalPrice = text.match(/\\d+/)[0];\n  if (totalPrice < 500000) {\n    cy.get(\".btn-success\").click();\n    cy.wait(2000);\n  }\n});\ncy.get(\".navbar-brand\").should('contain.text', 'ProtoCommerce Home');\ncy.get('#country').type('ind');\ncy.wait(7000);\ncy.get('.suggestions a').each($e1 => {\n  if ($e1.text() === 'India') {\n    cy.wrap($e1).click();\n  }\n});\ncy.get('#checkbox2').check({\n  force: true\n});\ncy.get('.btn-success').click();\ncy.get('.alert-success').should('include.text', 'Success');\n// prod card\n// cy.get('#exampleInputEmail1') //quantity",
               "err": {},
-              "uuid": "b258c260-a776-4d9b-9dac-f2b1dd432904",
-              "parentUUID": "4eec13e2-c0be-44db-bdca-4ab076ab3801",
+              "uuid": "b817822e-99c1-469d-bca8-350d90cf676d",
+              "parentUUID": "ec9dbd72-49bc-4b56-ab97-cd9f64fcc6f7",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b258c260-a776-4d9b-9dac-f2b1dd432904"
+            "b817822e-99c1-469d-bca8-350d90cf676d"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 19838,
+          "duration": 18882,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

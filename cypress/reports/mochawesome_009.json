@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-07T08:04:54.599Z",
-    "end": "2026-04-07T08:05:05.100Z",
-    "duration": 10501,
+    "start": "2026-04-07T08:23:05.404Z",
+    "end": "2026-04-07T08:23:13.990Z",
+    "duration": 8586,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "7d46dffe-e601-41a6-ad34-a429a56524cc",
+      "uuid": "ab798a4e-033c-4475-a78b-7507e65d5ffd",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\tableTesting.js",
       "file": "cypress\\integration\\examples\\tableTesting.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "16f7613d-72e8-4f66-b790-9e1edcabb1ea",
+          "uuid": "01075f07-bfa2-4820-9f3e-0625d21552f0",
           "title": "automating tables",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "chcking price of a purticular course",
               "fullTitle": "automating tables chcking price of a purticular course",
               "timedOut": null,
-              "duration": 8363,
+              "duration": 6932,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.get(\".table-display tr td:nth-child(2)\").each(($el1, index, $list) => {\n  const courseText = $el1.text();\n  if (courseText.includes('python')) {\n    cy.get('.table-display tr td:nth-child(2)', {\n      timeout: 10000\n    }).eq(index).next().then(price => {\n      const priceText = price.text();\n      expect(priceText).to.equal('25');\n      cy.log('verifid');\n    });\n  }\n});",
               "err": {},
-              "uuid": "c15ef3cf-5688-4e0c-8a60-47514ad6c022",
-              "parentUUID": "16f7613d-72e8-4f66-b790-9e1edcabb1ea",
+              "uuid": "b761f1f6-b46d-423d-a3ef-fc371088b1b5",
+              "parentUUID": "01075f07-bfa2-4820-9f3e-0625d21552f0",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "c15ef3cf-5688-4e0c-8a60-47514ad6c022"
+            "b761f1f6-b46d-423d-a3ef-fc371088b1b5"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8363,
+          "duration": 6932,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
