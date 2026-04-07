@@ -40,7 +40,7 @@ jobs:
 
       - name: Upload HTML Report as Artifact
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-html-report
           path: cypress/reports/final-report.html
