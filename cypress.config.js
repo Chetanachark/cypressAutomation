@@ -3,11 +3,11 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   projectId: 'iriqwm',
 
-  reporter: "cypress-mochawesome-reporter",
+  reporter: 'mochawesome',
   reporterOptions: {
-    reportDir: "cypress/reports",
+    reportDir: 'cypress/reports',
     overwrite: false,
-    html: true,
+    html: false,
     json: true
   },
 
@@ -17,10 +17,6 @@ module.exports = defineConfig({
     retries: {
       runMode: 2,
       openMode: 0
-    },
-
-    setupNodeEvents(on, config) {
-      require("cypress-mochawesome-reporter/plugin")(on);
-    },
+    }
   },
 });

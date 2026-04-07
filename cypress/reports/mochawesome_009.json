@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-07T06:43:07.809Z",
+    "end": "2026-04-07T06:43:13.619Z",
+    "duration": 5810,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c73dfa34-460e-4558-a757-619a865e72d8",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\tableTesting.js",
+      "file": "cypress\\integration\\examples\\tableTesting.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9cb520f7-d086-4086-b151-179ab8b7ee99",
+          "title": "automating tables",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "chcking price of a purticular course",
+              "fullTitle": "automating tables chcking price of a purticular course",
+              "timedOut": null,
+              "duration": 4096,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".table-display tr td:nth-child(2)\").each(($el1, index, $list) => {\n  const courseText = $el1.text();\n  if (courseText.includes('python')) {\n    cy.get('.table-display tr td:nth-child(2)', {\n      timeout: 10000\n    }).eq(index).next().then(price => {\n      const priceText = price.text();\n      expect(priceText).to.equal('25');\n      cy.log('verifid');\n    });\n  }\n});",
+              "err": {},
+              "uuid": "10047859-3ea3-4b10-9a59-d8cdb7f7b59d",
+              "parentUUID": "9cb520f7-d086-4086-b151-179ab8b7ee99",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "10047859-3ea3-4b10-9a59-d8cdb7f7b59d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4096,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

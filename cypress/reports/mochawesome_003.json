@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-07T06:41:33.996Z",
+    "end": "2026-04-07T06:41:54.164Z",
+    "duration": 20168,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "edd311a6-e50a-4243-99ef-94040a8d16ba",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\eComAlltem.js",
+      "file": "cypress\\integration\\examples\\eComAlltem.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "560fc4dd-ad8f-460e-b9e4-5b8feb30c32f",
+          "title": "end to end test of Ecommerce website",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "End to end Ec commerce functionality",
+              "fullTitle": "end to end test of Ecommerce website End to end Ec commerce functionality",
+              "timedOut": null,
+              "duration": 18851,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#username\").type('rahulshettyacademy');\ncy.get(\"#password\").type('Learning@830$3mK2');\ncy.contains('label', 'Admin').click();\ncy.get('select').select('Student');\ncy.get('#terms').check();\ncy.get('#signInBtn').click();\ncy.wait(4000);\ncy.url().should('include', 'shop');\n//Verifing shop page\ncy.get('h1.my-4').should('have.text', 'Shop Name');\ncy.get('.card.h-100').find('.btn').each(($e1, index, $list) => {\n  cy.wrap($e1).click();\n});\ncy.get('.btn-primary').invoke('text').then(text => {\n  const number = text.match(/\\d+/)[0]; // extracts digits\n  cy.get('.btn-primary').click();\n  for (let i = 0; i < number; i++) {\n    cy.get('tbody tr').eq(i).find('.text-success').should('contain', 'In Stock');\n  }\n});\ncy.get(\".text-right\").invoke('text').then(text => {\n  const totalPrice = text.match(/\\d+/)[0];\n  if (totalPrice < 500000) {\n    cy.get(\".btn-success\").click();\n    cy.wait(2000);\n  }\n});\ncy.get(\".navbar-brand\").should('contain.text', 'ProtoCommerce Home');\ncy.get('#country').type('ind');\ncy.wait(7000);\ncy.get('.suggestions a').each($e1 => {\n  if ($e1.text() === 'India') {\n    cy.wrap($e1).click();\n  }\n});\ncy.get('#checkbox2').check({\n  force: true\n});\ncy.get('.btn-success').click();\ncy.get('.alert-success').should('include.text', 'Success');\n// prod card\n// cy.get('#exampleInputEmail1') //quantity",
+              "err": {},
+              "uuid": "82ce7dd6-0ec2-45b0-a02d-3e5f37fb6e87",
+              "parentUUID": "560fc4dd-ad8f-460e-b9e4-5b8feb30c32f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "82ce7dd6-0ec2-45b0-a02d-3e5f37fb6e87"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18851,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

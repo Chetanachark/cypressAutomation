@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-07T06:41:26.679Z",
+    "end": "2026-04-07T06:41:32.437Z",
+    "duration": 5758,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "244be279-788a-4af1-861a-85f65d1949d3",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\dateCalender.js",
+      "file": "cypress\\integration\\examples\\dateCalender.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2e234f61-ef16-45e7-8626-bf64f407d4a4",
+          "title": "handling calenders",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "date chooser from calender pop up",
+              "fullTitle": "handling calenders date chooser from calender pop up",
+              "timedOut": null,
+              "duration": 3375,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"a[href='#/offers']\").invoke('removeAttr', 'target').click();\ncy.get('.redLogo').should('contain', 'KART');\n//Picking up date\nconst year = 2025;\nconst month = 7;\nconst date = 25;\nconst expectedList = [month, date, year];\ncy.get(\".react-date-picker__calendar-button\").click();\ncy.get(\".react-calendar__navigation__label\").click();\ncy.get(\".react-calendar__navigation__label\").click();\ncy.contains(\"button\", year).click();\ncy.get(\".react-calendar__year-view__months__month\").eq(month - 1).click();\ncy.contains(\"button abbr\", date).click();\n//assertingDate\ncy.get(\".react-date-picker__inputGroup__input\").each(($el1, index, $list) => {\n  cy.wrap($el1).invoke('val').then(value => {\n    expect(value).be.equal(expectedList[index].toString());\n  });\n});",
+              "err": {},
+              "uuid": "8c145473-10c5-4667-ae89-3803dafc8d8e",
+              "parentUUID": "2e234f61-ef16-45e7-8626-bf64f407d4a4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8c145473-10c5-4667-ae89-3803dafc8d8e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3375,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

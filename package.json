@@ -15,7 +15,6 @@
     "concurrently": "^9.2.1",
     "cypress": "^15.13.0",
     "cypress-iframe": "^1.0.1",
-    "cypress-mochawesome-reporter": "^4.0.2",
     "mochawesome": "^7.1.4",
     "mochawesome-merge": "^5.1.1",
     "mochawesome-report-generator": "^6.3.2"

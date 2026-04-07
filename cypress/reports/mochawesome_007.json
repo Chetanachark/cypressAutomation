@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-07T06:42:45.014Z",
+    "end": "2026-04-07T06:42:56.991Z",
+    "duration": 11977,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d22a6042-0e06-430a-9147-419cd92aefe4",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\login.js",
+      "file": "cypress\\integration\\examples\\login.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4441a36f-076e-4d4a-91eb-2a0f62b63080",
+          "title": "end to end test of Ecommerce website",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "End to end Ec commerce functionality",
+              "fullTitle": "end to end test of Ecommerce website End to end Ec commerce functionality",
+              "timedOut": null,
+              "duration": 9729,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#username\").type('rahulshettyacademy');\ncy.get(\"#password\").type('Learning@830$3mK2');\ncy.contains('label', 'Admin').click();\ncy.get('select').select('Student');\ncy.get('#terms').check();\ncy.get('#signInBtn').click();\ncy.wait(4000);\ncy.url().should('include', 'shop'); // after switching next tab",
+              "err": {},
+              "uuid": "ce8ec015-58f1-4ad3-83b7-267f4a8ec924",
+              "parentUUID": "4441a36f-076e-4d4a-91eb-2a0f62b63080",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ce8ec015-58f1-4ad3-83b7-267f4a8ec924"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9729,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
