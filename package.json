@@ -6,14 +6,18 @@
   "author": "",
   "type": "commonjs",
   "main": "index.js",
- "scripts": {
-  "cy:chrome": "cypress run --browser chrome --record --parallel --group chrome --ci-build-id local-build-1 --key 0427a74f-ce8e-4265-81d6-2bcfe9c5377d",
-  "cy:edge": "cypress run --browser edge --record --parallel --group edge --ci-build-id local-build-1 --key 0427a74f-ce8e-4265-81d6-2bcfe9c5377d",
-  "cy:parallel": "concurrently \"npm run cy:chrome\" \"npm run cy:edge\""
-},
+  "scripts": {
+    "cy:chrome": "cypress run --browser chrome --record --parallel --group chrome --ci-build-id local-build-1 --key 0427a74f-ce8e-4265-81d6-2bcfe9c5377d",
+    "cy:edge": "cypress run --browser edge --record --parallel --group edge --ci-build-id local-build-1 --key 0427a74f-ce8e-4265-81d6-2bcfe9c5377d",
+    "cy:parallel": "concurrently \"npm run cy:chrome\" \"npm run cy:edge\""
+  },
   "devDependencies": {
     "concurrently": "^9.2.1",
     "cypress": "^15.13.0",
-    "cypress-iframe": "^1.0.1"
+    "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2"
   }
 }
