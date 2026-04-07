@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-07T06:42:58.531Z",
-    "end": "2026-04-07T06:43:06.288Z",
-    "duration": 7757,
+    "start": "2026-04-07T08:04:45.469Z",
+    "end": "2026-04-07T08:04:53.040Z",
+    "duration": 7571,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "8f4eec6f-4f99-4022-adf4-300b6d54301c",
+      "uuid": "07cc421b-00a0-4ec2-99ed-c08276ffb843",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\mouseOver.js",
       "file": "cypress\\integration\\examples\\mouseOver.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "58177278-d0f1-4e46-aefa-daa1f1b8a800",
+          "uuid": "b5e83b50-c92a-4f12-b93f-e177168299a7",
           "title": "handling mousover",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "mouseover",
               "fullTitle": "handling mousover mouseover",
               "timedOut": null,
-              "duration": 6362,
+              "duration": 6218,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.get('.mouse-hover-content').invoke('show');\ncy.contains('Top').click({\n  force: true\n});\ncy.url().should('include', 'top');\ncy.get('.mouse-hover-content').invoke('show'); //invok\ncy.contains('Reload').click({\n  force: true\n});\ncy.url().should('not.include', 'top');",
               "err": {},
-              "uuid": "4f9ab0ea-cc73-4259-ad10-e3ab29982e04",
-              "parentUUID": "58177278-d0f1-4e46-aefa-daa1f1b8a800",
+              "uuid": "a56efffb-4130-476b-9838-a8da762f10e2",
+              "parentUUID": "b5e83b50-c92a-4f12-b93f-e177168299a7",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4f9ab0ea-cc73-4259-ad10-e3ab29982e04"
+            "a56efffb-4130-476b-9838-a8da762f10e2"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6362,
+          "duration": 6218,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-07T06:43:07.809Z",
-    "end": "2026-04-07T06:43:13.619Z",
-    "duration": 5810,
+    "start": "2026-04-07T08:04:54.599Z",
+    "end": "2026-04-07T08:05:05.100Z",
+    "duration": 10501,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c73dfa34-460e-4558-a757-619a865e72d8",
+      "uuid": "7d46dffe-e601-41a6-ad34-a429a56524cc",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\tableTesting.js",
       "file": "cypress\\integration\\examples\\tableTesting.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "9cb520f7-d086-4086-b151-179ab8b7ee99",
+          "uuid": "16f7613d-72e8-4f66-b790-9e1edcabb1ea",
           "title": "automating tables",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "chcking price of a purticular course",
               "fullTitle": "automating tables chcking price of a purticular course",
               "timedOut": null,
-              "duration": 4096,
+              "duration": 8363,
               "state": "passed",
-              "speed": "fast",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.get(\".table-display tr td:nth-child(2)\").each(($el1, index, $list) => {\n  const courseText = $el1.text();\n  if (courseText.includes('python')) {\n    cy.get('.table-display tr td:nth-child(2)', {\n      timeout: 10000\n    }).eq(index).next().then(price => {\n      const priceText = price.text();\n      expect(priceText).to.equal('25');\n      cy.log('verifid');\n    });\n  }\n});",
               "err": {},
-              "uuid": "10047859-3ea3-4b10-9a59-d8cdb7f7b59d",
-              "parentUUID": "9cb520f7-d086-4086-b151-179ab8b7ee99",
+              "uuid": "c15ef3cf-5688-4e0c-8a60-47514ad6c022",
+              "parentUUID": "16f7613d-72e8-4f66-b790-9e1edcabb1ea",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "10047859-3ea3-4b10-9a59-d8cdb7f7b59d"
+            "c15ef3cf-5688-4e0c-8a60-47514ad6c022"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4096,
+          "duration": 8363,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

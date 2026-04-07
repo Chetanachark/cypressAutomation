@@ -6,17 +6,23 @@
   "author": "",
   "type": "commonjs",
   "main": "index.js",
-  "scripts": {
-    "cy:chrome": "cypress run --browser chrome --record --parallel --group chrome --ci-build-id local-build-1 --key 0427a74f-ce8e-4265-81d6-2bcfe9c5377d",
-    "cy:edge": "cypress run --browser edge --record --parallel --group edge --ci-build-id local-build-1 --key 0427a74f-ce8e-4265-81d6-2bcfe9c5377d",
-    "cy:parallel": "concurrently \"npm run cy:chrome\" \"npm run cy:edge\""
-  },
+ "scripts": {
+  "clean:reports": "rimraf cypress/reports/*.json merged.json",
+  "cy:run": "cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=false,json=true",
+  "mocha:merge": "mochawesome-merge \"cypress/reports/*.json\" -o merged.json",
+  "mocha:report": "marge merged.json --reportDir cypress/reports --reportFilename final-report",
+  "cy:report": "npm run mocha:merge && npm run mocha:report",
+  "clean:reports": "rimraf cypress/reports merged.json",
+  "summary": "node scripts/generate-summary.js",
+  "cy:full": "npm run clean:reports && npm run cy:run && npm run cy:report && npm run summary"
+},
   "devDependencies": {
     "concurrently": "^9.2.1",
     "cypress": "^15.13.0",
     "cypress-iframe": "^1.0.1",
     "mochawesome": "^7.1.4",
     "mochawesome-merge": "^5.1.1",
-    "mochawesome-report-generator": "^6.3.2"
+    "mochawesome-report-generator": "^6.3.2",
+    "rimraf": "^6.1.3"
   }
 }

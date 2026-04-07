@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-07T06:42:18.887Z",
-    "end": "2026-04-07T06:42:32.266Z",
-    "duration": 13379,
+    "start": "2026-04-07T08:04:09.640Z",
+    "end": "2026-04-07T08:04:21.485Z",
+    "duration": 11845,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b089dba6-beb0-4f97-b89c-0f99e94d6eb8",
+      "uuid": "b7ffceac-bd0f-4535-84fb-90509dbb51b2",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\greenCartTest.js",
       "file": "cypress\\integration\\examples\\greenCartTest.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c196fca9-6789-40e0-866a-1f03cc97eacb",
+          "uuid": "1dd59dac-108f-43fa-a9c5-6185c0e84b87",
           "title": "GreenCart E2E test",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "adding item to cart",
               "fullTitle": "GreenCart E2E test adding item to cart",
               "timedOut": null,
-              "duration": 11304,
+              "duration": 10216,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.get(\"input[type='search']\").type(\"ca\");\ncy.get(\".search-button\").click();\n//using parent child chaining\ncy.get(\".products\").as('productLocator'); //aliasing\ncy.get('@productLocator').find(\".product\").each(($e1, index, $list) => {\n  let testofProductName = $e1.find('h4.product-name').text();\n  if (testofProductName.includes('Carrot')) {\n    cy.wrap($e1).find('button').click();\n  }\n});\ncy.get('.cart-icon').click();\ncy.get('.cart-items').as('cartItems');\ncy.get('@cartItems').find('.cart-item:visible').should('have.length', 1);\ncy.get('@cartItems').find('.product-name').should('contain.text', 'Carrot');\ncy.get('.action-block:visible').find(\"button[type='button']\").click();\ncy.get('tbody tr:nth-child(1) td:nth-child(2)').should('contain.text', 'Carrot');\ncy.get('.promoCode').type('xyz');\ncy.get('.promoBtn').click();\ncy.wait(4000);\ncy.get('.promoInfo').should('contain.text', 'Invalid code');\ncy.contains(\"Place Order\").click();\ncy.get('.chkAgree').check().should('be.checked');\n//static dropdown\ncy.get('select').select(['Andorra']).should('have.value', 'Andorra');",
               "err": {},
-              "uuid": "4f9f762b-1c42-4828-842b-da5ae6bb5082",
-              "parentUUID": "c196fca9-6789-40e0-866a-1f03cc97eacb",
+              "uuid": "c3b953f1-e8fd-43d5-ac5f-5f39b916e5ee",
+              "parentUUID": "1dd59dac-108f-43fa-a9c5-6185c0e84b87",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4f9f762b-1c42-4828-842b-da5ae6bb5082"
+            "c3b953f1-e8fd-43d5-ac5f-5f39b916e5ee"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 11304,
+          "duration": 10216,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
