@@ -2,7 +2,7 @@ name: Cypress Scheduled Run
 
 on:
   schedule:
-    - cron: '15 12 * * *'  # 5:45 PM IST
+    - cron: '15 12 * * *'  # Daily at 5:45 PM IST (12:15 UTC)
   workflow_dispatch:
 
 jobs:
@@ -21,16 +21,11 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Clean Old Reports
-        run: rm -rf cypress/reports/json/* merged.json || true
+      - name: Clean old reports
+        run: npm run clean:reports
 
       - name: Run Cypress Tests (Record + Mochawesome)
-        run: |
-          npx cypress run \
-            --record \
-            --key ${{ secrets.CYPRESS_RECORD_KEY }} \
-            --reporter mochawesome \
-            --reporter-options reportDir=cypress/reports/json,overwrite=false,html=false,json=true
+        run: npm run cy:run
 
       - name: Debug - List Report Files
         run: |
@@ -38,10 +33,13 @@ jobs:
           ls -R cypress/reports
 
       - name: Merge Mochawesome JSON Reports
-        run: npx mochawesome-merge "cypress/reports/json/*.json" -o merged.json
+        run: npm run mocha:merge
 
       - name: Generate Final HTML Report
-        run: npx marge merged.json --reportDir cypress/reports --reportFilename final-report
+        run: npm run mocha:report
+
+      - name: Generate Regression Summary
+        run: npm run summary
 
       - name: Upload HTML Report
         if: always()
@@ -49,44 +47,3 @@ jobs:
         with:
           name: cypress-html-report
           path: cypress/reports/final-report.html
-
-      - name: Print Regression Summary
-        run: |
-          node -e "
-          const fs = require('fs');
-          const report = JSON.parse(fs.readFileSync('merged.json', 'utf-8'));
-          let total=0, passed=0, failed=0, skipped=0, duration=0;
-          report.results.forEach(spec => {
-            if (spec.stats) {
-              total += spec.stats.tests || 0;
-              passed += spec.stats.passes || 0;
-              failed += spec.stats.failures || 0;
-              skipped += spec.stats.pending || 0;
-              duration += spec.stats.duration || 0;
-            } else if (spec.suites) {
-              spec.suites.forEach(suite => {
-                if (suite.tests) {
-                  total += suite.tests.length;
-                  suite.tests.forEach(t => {
-                    if (t.state==='passed') passed++;
-                    else if (t.state==='failed') failed++;
-                    else if (t.state==='pending') skipped++;
-                    duration += t.duration || 0;
-                  });
-                }
-              });
-            }
-          });
-          const durationMinutes = (duration/60000).toFixed(2);
-          const passRate = total>0 ? ((passed/total)*100).toFixed(2) : 0;
-          console.log('\\n---- Regression Summary ----');
-          console.log('Total: '+total);
-          console.log('Passed: '+passed);
-          console.log('Failed: '+failed);
-          console.log('Skipped: '+skipped);
-          console.log('Pass Rate: '+passRate+'%');
-          console.log('Duration: '+durationMinutes+' minutes');
-          console.log('----------------------------');
-          if(failed>0){ console.log('⚠️ Regression Failed!'); process.exit(1); }
-          else{ console.log('🎉 Hurray! Regression Passed.'); }
-          "

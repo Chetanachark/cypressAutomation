@@ -1,57 +1,34 @@
-const fs = require('fs');
+const fs = require("fs");
+const path = "./merged.json";
 
-// Read merged mochawesome report
-const report = JSON.parse(fs.readFileSync('merged.json', 'utf-8'));
+// Check if merged.json exists
+if (!fs.existsSync(path)) {
+  console.error("No merged.json found. Run cy:report first.");
+  process.exit(1);
+}
 
-let totalTests = 0;
-let passed = 0;
-let failed = 0;
-let skipped = 0;
-let duration = 0;
+// Read merged JSON
+const data = JSON.parse(fs.readFileSync(path));
 
-// Loop through each spec result safely
-report.results.forEach(spec => {
-  // Each spec may have suites
-  if (spec.stats) {
-    totalTests += spec.stats.tests || 0;
-    passed += spec.stats.passes || 0;
-    failed += spec.stats.failures || 0;
-    skipped += spec.stats.pending || 0;
-    duration += spec.stats.duration || 0;
-  } else if (spec.suites && spec.suites.length > 0) {
-    spec.suites.forEach(suite => {
-      if (suite.tests) {
-        totalTests += suite.tests.length;
-        suite.tests.forEach(t => {
-          if (t.state === 'passed') passed++;
-          else if (t.state === 'failed') failed++;
-          else if (t.state === 'pending') skipped++;
-          duration += t.duration || 0;
-        });
-      }
-    });
-  }
-});
+// Use overall stats
+const stats = data.stats;
 
-// Convert duration to minutes
-const durationMinutes = (duration / 60000).toFixed(2);
+const total = stats.tests || 0;
+const passed = stats.passes || 0;
+const failed = stats.failures || 0;
+const durationMins = ((stats.duration || 0) / 60000).toFixed(2);
+const passRate = total > 0 ? ((passed / total) * 100).toFixed(2) : 0;
 
-// Pass rate
-const passRate = totalTests > 0 ? ((passed / totalTests) * 100).toFixed(2) : 0;
-
-console.log("\n---- Regression Summary ----");
-console.log(`Total: ${totalTests}`);
+console.log("---- Regression Summary ----");
+console.log(`Total: ${total}`);
 console.log(`Passed: ${passed}`);
 console.log(`Failed: ${failed}`);
-console.log(`Skipped: ${skipped}`);
 console.log(`Pass Rate: ${passRate}%`);
-console.log(`Duration: ${durationMinutes} minutes`);
-console.log("----------------------------");
+console.log(`Duration: ${durationMins} mins`);
 
-// Fail pipeline if any test failed
 if (failed > 0) {
   console.log("⚠️ Regression Failed!");
   process.exit(1);
 } else {
-  console.log("🎉 Hurray! Regression Passed.");
+  console.log("Hurrrayy.....Regression Passed.");
 }

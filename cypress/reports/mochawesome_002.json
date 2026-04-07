@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-07T08:21:28.818Z",
-    "end": "2026-04-07T08:21:34.253Z",
-    "duration": 5435,
+    "start": "2026-04-07T09:19:03.664Z",
+    "end": "2026-04-07T09:19:09.699Z",
+    "duration": 6035,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "e46c7df3-db18-47a9-8743-d799e2e0e140",
+      "uuid": "e5f5efee-8704-438f-bc1f-625489b81c92",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\dateCalender.js",
       "file": "cypress\\integration\\examples\\dateCalender.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "14565e20-ac93-429f-9a3b-fd8336ea63b5",
+          "uuid": "ce331bd5-baae-4b3e-b1de-0dbe1f9998ae",
           "title": "handling calenders",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "date chooser from calender pop up",
               "fullTitle": "handling calenders date chooser from calender pop up",
               "timedOut": null,
-              "duration": 3647,
+              "duration": 3751,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.get(\"a[href='#/offers']\").invoke('removeAttr', 'target').click();\ncy.get('.redLogo').should('contain', 'KART');\n//Picking up date\nconst year = 2025;\nconst month = 7;\nconst date = 25;\nconst expectedList = [month, date, year];\ncy.get(\".react-date-picker__calendar-button\").click();\ncy.get(\".react-calendar__navigation__label\").click();\ncy.get(\".react-calendar__navigation__label\").click();\ncy.contains(\"button\", year).click();\ncy.get(\".react-calendar__year-view__months__month\").eq(month - 1).click();\ncy.contains(\"button abbr\", date).click();\n//assertingDate\ncy.get(\".react-date-picker__inputGroup__input\").each(($el1, index, $list) => {\n  cy.wrap($el1).invoke('val').then(value => {\n    expect(value).be.equal(expectedList[index].toString());\n  });\n});",
               "err": {},
-              "uuid": "bcd86417-a73c-410a-8126-502995dad6d9",
-              "parentUUID": "14565e20-ac93-429f-9a3b-fd8336ea63b5",
+              "uuid": "c961e704-7548-47d8-9bb4-bd168daae69c",
+              "parentUUID": "ce331bd5-baae-4b3e-b1de-0dbe1f9998ae",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "bcd86417-a73c-410a-8126-502995dad6d9"
+            "c961e704-7548-47d8-9bb4-bd168daae69c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3647,
+          "duration": 3751,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
