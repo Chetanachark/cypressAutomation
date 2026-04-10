@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-10T07:16:22.105Z",
-    "end": "2026-04-10T07:16:29.100Z",
-    "duration": 6995,
+    "start": "2026-04-10T07:34:18.118Z",
+    "end": "2026-04-10T07:34:37.940Z",
+    "duration": 19822,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c7fac61f-8410-438b-9cfe-0658de14980a",
+      "uuid": "d3cc8060-9212-46d8-90f1-2e63aeb228fe",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\dateCalender.js",
       "file": "cypress\\integration\\examples\\dateCalender.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "9d2ff387-0dbc-43ea-b5e3-1a76a6e34f57",
+          "uuid": "303d744a-26df-41e7-b317-d79bdc0081e4",
           "title": "handling calenders",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "date chooser from calender pop up",
               "fullTitle": "handling calenders date chooser from calender pop up",
               "timedOut": null,
-              "duration": 5234,
+              "duration": 17278,
               "state": "passed",
-              "speed": "medium",
+              "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.get(\"a[href='#/offers']\").invoke('removeAttr', 'target').click();\ncy.get('.redLogo').should('contain', 'KART');\n//Picking up date\nconst year = 2025;\nconst month = 7;\nconst date = 25;\nconst expectedList = [month, date, year];\ncy.get(\".react-date-picker__calendar-button\").click();\ncy.get(\".react-calendar__navigation__label\").click();\ncy.get(\".react-calendar__navigation__label\").click();\ncy.contains(\"button\", year).click();\ncy.get(\".react-calendar__year-view__months__month\").eq(month - 1).click();\ncy.contains(\"button abbr\", date).click();\n//assertingDate\ncy.get(\".react-date-picker__inputGroup__input\").each(($el1, index, $list) => {\n  cy.wrap($el1).invoke('val').then(value => {\n    expect(value).be.equal(expectedList[index].toString());\n  });\n});",
               "err": {},
-              "uuid": "ea89a616-1d7d-489f-9878-fb843b42e85d",
-              "parentUUID": "9d2ff387-0dbc-43ea-b5e3-1a76a6e34f57",
+              "uuid": "8b4f12aa-cb6a-4bc7-9c81-16ed1f0ee63d",
+              "parentUUID": "303d744a-26df-41e7-b317-d79bdc0081e4",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ea89a616-1d7d-489f-9878-fb843b42e85d"
+            "8b4f12aa-cb6a-4bc7-9c81-16ed1f0ee63d"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5234,
+          "duration": 17278,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

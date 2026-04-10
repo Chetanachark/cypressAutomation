@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-10T07:16:10.839Z",
-    "end": "2026-04-10T07:16:20.689Z",
-    "duration": 9850,
+    "start": "2026-04-10T07:34:07.735Z",
+    "end": "2026-04-10T07:34:16.664Z",
+    "duration": 8929,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "767e8515-e39a-4b80-9f4a-278df86a95ab",
+      "uuid": "33859d59-ceb5-4001-a3b6-d449677e4307",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\childWindows.js",
       "file": "cypress\\integration\\examples\\childWindows.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1b6e9676-17d4-446d-8ba0-f26a6ad1249d",
+          "uuid": "fee668c7-42d9-4a2d-8f85-196ca91f3a62",
           "title": "handling child window or a tab",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "automating child wildows",
               "fullTitle": "handling child window or a tab automating child wildows",
               "timedOut": null,
-              "duration": 8033,
+              "duration": 6373,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.get('.blinkingText').then(ele => {\n  const url = ele.prop('href');\n  cy.log(url);\n  cy.origin(\"https://www.firefox.com/en-US/thanks/\", () => {\n    cy.log('into a child window');\n  });\n  // cy.visit(url)\n});\n//child window test goes here",
               "err": {},
-              "uuid": "7c4c7aef-8916-47fb-8797-4f9d0566bdbf",
-              "parentUUID": "1b6e9676-17d4-446d-8ba0-f26a6ad1249d",
+              "uuid": "6ad0d2d5-3fff-4427-bc90-c1cec2dfbe3f",
+              "parentUUID": "fee668c7-42d9-4a2d-8f85-196ca91f3a62",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "7c4c7aef-8916-47fb-8797-4f9d0566bdbf"
+            "6ad0d2d5-3fff-4427-bc90-c1cec2dfbe3f"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8033,
+          "duration": 6373,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -1,21 +1,28 @@
 describe("end to end test of Ecommerce website",()=>{
 
-    beforeEach("Load E-commerce website ",()=>{
-        cy.visit("https://rahulshettyacademy.com/loginpagePractise/#");
+    before(function(){
+        
+         cy.fixture('example').then((data) =>{
+            this.data = data;
+
+        })
     
     })
-    it("End to end Ec commerce functionality",()=>{
-        cy.get("#username").type('rahulshettyacademy');
-        cy.get("#password").type('Learning@830$3mK2');
+    
+    it("End to end Ec commerce functionality",function(){
+        
+        cy.visit(this.data.url)
+        cy.get("#username").type(this.data.userName);
+        cy.get("#password").type(this.data.password);
         cy.contains('label','Admin').click();
-        cy.get('select').select('Student');
+        cy.get('select').select(this.data.role);
         cy.get('#terms').check();
         cy.get('#signInBtn').click();
-        cy.wait(4000);
-        cy.url().should('include','shop');
+        
+        cy.url().should('include',this.data.shopUrl);
         //Verifing shop page
 
-        cy.get('h1.my-4').should('have.text','Shop Name');
+        cy.get('h1.my-4').should('have.text',this.data.pageName);
         cy.get('.card.h-100').find('.btn').each(($e1, index, $list)=>{
             cy.wrap($e1).click();
             
@@ -27,7 +34,7 @@ describe("end to end test of Ecommerce website",()=>{
                  cy.get('tbody tr')
                 .eq(i)
                 .find('.text-success')
-                .should('contain', 'In Stock');
+                .should('contain', this.data.checkStock);
             }
 
             });
@@ -36,29 +43,33 @@ describe("end to end test of Ecommerce website",()=>{
                 if(totalPrice<500000)
                 {
                     cy.get(".btn-success").click();
-                    cy.wait(2000);
+                    
                 }
 
             })
-            cy.get(".navbar-brand").should('contain.text','ProtoCommerce Home');
+            cy.get(".navbar-brand").should('contain.text',this.data.homePageName);
             cy.get('#country').type('ind')
-            cy.wait(7000);
+            
             cy.get('.suggestions a').each(($e1)=>{
-                if($e1.text()==='India')
+                if($e1.text()===this.data.country)
                 {
                     cy.wrap($e1).click();
                 }
             })
             cy.get('#checkbox2').check({ force: true });
-            cy.get('.btn-success').click();
-            cy.get('.alert-success').should('include.text','Success');
+            cy.get('.btn-success').click({ force: true });
+            cy.get('.alert-success').should('include.text',this.data.successMessage);
         
         
          
         
         // prod card
        // cy.get('#exampleInputEmail1') //quantity
+      
 
+    })
+    after("close browswe",()=>{
+       cy.log("test Finished");
     })
 
 })

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-10T07:18:15.207Z",
-    "end": "2026-04-10T07:18:21.363Z",
-    "duration": 6156,
+    "start": "2026-04-10T07:36:45.324Z",
+    "end": "2026-04-10T07:36:53.024Z",
+    "duration": 7700,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "d7bdb4a9-9fff-40bf-a097-7a2b869f3ba3",
+      "uuid": "d9248373-4ee7-4872-a351-74853a17c00b",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\test1.js",
       "file": "cypress\\integration\\examples\\test1.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e00d407f-b2d0-4729-9c37-c8c0d6748b4b",
+          "uuid": "9f68bd28-ef33-47fe-b444-c166aa691d1a",
           "title": "My first test suite",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "first test case",
               "fullTitle": "My first test suite first test case",
               "timedOut": null,
-              "duration": 4086,
+              "duration": 5653,
               "state": "passed",
-              "speed": "fast",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.visit(\"https://rahulshettyacademy.com/seleniumPractise/#/\");\ncy.get(\"input[type='search']\").type(\"ca\");\ncy.get(\".search-button\").click();\n//using parent child chaining\ncy.get(\".products\").as('productLocator'); //aliasing\ncy.get(\"@productLocator\").find(\".product\").should('have.length', 4);\ncy.get('@productLocator').find(\".product\").each(($e1, index, $list) => {\n  let testofProductName = $e1.find('h4.product-name').text();\n  if (testofProductName.includes('Carrot')) {\n    cy.wrap($e1).find('button').click();\n  }\n});\ncy.get('.brand').should('have.text', 'GREENKART');\ncy.get('.brand').then(function (logoElement) {\n  logoElement.text();\n  cy.log(logoElement.text());\n});",
               "err": {},
-              "uuid": "510234a5-85a4-4d7f-b89a-99fa7309417c",
-              "parentUUID": "e00d407f-b2d0-4729-9c37-c8c0d6748b4b",
+              "uuid": "85153d1e-466c-47cc-9edb-cfcff52f77fc",
+              "parentUUID": "9f68bd28-ef33-47fe-b444-c166aa691d1a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "510234a5-85a4-4d7f-b89a-99fa7309417c"
+            "85153d1e-466c-47cc-9edb-cfcff52f77fc"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4086,
+          "duration": 5653,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-10T07:17:33.525Z",
-    "end": "2026-04-10T07:17:43.044Z",
-    "duration": 9519,
+    "start": "2026-04-10T07:35:52.786Z",
+    "end": "2026-04-10T07:36:05.676Z",
+    "duration": 12890,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "681967fe-b7ce-4a64-bda7-029b4aa1fc4a",
+      "uuid": "97663c2a-faa3-4fd0-a3de-def122bc79f3",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\iframe.js",
       "file": "cypress\\integration\\examples\\iframe.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1581cb31-7879-45a8-9e6e-4e91977f5e1c",
+          "uuid": "c2ea5bb8-d673-40a9-b025-66bc541d0f7a",
           "title": "Handling Iframes",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "handling iframe within an page",
               "fullTitle": "Handling Iframes handling iframe within an page",
               "timedOut": null,
-              "duration": 7737,
+              "duration": 9688,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.get('#courses-iframe').then($iframe => {\n  const iframeUrl = $iframe.prop('src');\n  const url = new URL(iframeUrl);\n  const origin = url.origin;\n  const path = url.pathname;\n  cy.origin(origin, {\n    args: {\n      path\n    }\n  }, ({\n    path\n  }) => {\n    cy.visit(path);\n    cy.get(\"a[href='mentorship']\").eq(0).click();\n  });\n});\n// cy.iframe().find(\"a[href='mentorship']\").eq(0).click();",
               "err": {},
-              "uuid": "59b98447-f480-49be-b6d8-8208fd93c7ff",
-              "parentUUID": "1581cb31-7879-45a8-9e6e-4e91977f5e1c",
+              "uuid": "a114c1d9-38a3-43c8-b643-b7a62d2c5f0c",
+              "parentUUID": "c2ea5bb8-d673-40a9-b025-66bc541d0f7a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "59b98447-f480-49be-b6d8-8208fd93c7ff"
+            "a114c1d9-38a3-43c8-b643-b7a62d2c5f0c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 7737,
+          "duration": 9688,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

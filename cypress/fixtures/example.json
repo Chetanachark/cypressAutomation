@@ -1,6 +1,15 @@
 {
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes",
-  "url": ""
+  "url": "https://rahulshettyacademy.com/loginpagePractise/#",
+  "userName": "rahulshettyacademy",
+  "password": "Learning@830$3mK2",
+  "role": "Student",
+  "shopUrl": "shop",
+  "pageName": "Shop Name",
+  "checkStock":"In Stock",
+  "homePageName": "ProtoCommerce Home",
+  "country":"India",
+  "successMessage":"Success"
+
+
+  
 }
