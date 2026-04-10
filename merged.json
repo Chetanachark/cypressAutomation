@@ -12,13 +12,13 @@
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2026-04-07T09:18:42.275Z",
-    "end": "2026-04-07T09:20:58.954Z",
-    "duration": 136679
+    "start": "2026-04-10T07:15:55.294Z",
+    "end": "2026-04-10T07:18:21.363Z",
+    "duration": 146069
   },
   "results": [
     {
-      "uuid": "b283e1b1-04b0-404b-b393-6aa625120bbb",
+      "uuid": "767e8515-e39a-4b80-9f4a-278df86a95ab",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\childWindows.js",
       "file": "cypress\\integration\\examples\\childWindows.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "6c67fd23-ce7a-440e-96e7-2bbc5e17cb0b",
+          "uuid": "1b6e9676-17d4-446d-8ba0-f26a6ad1249d",
           "title": "handling child window or a tab",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "automating child wildows",
               "fullTitle": "handling child window or a tab automating child wildows",
               "timedOut": null,
-              "duration": 5678,
+              "duration": 8033,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.get('.blinkingText').then(ele => {\n  const url = ele.prop('href');\n  cy.log(url);\n  cy.origin(\"https://www.firefox.com/en-US/thanks/\", () => {\n    cy.log('into a child window');\n  });\n  // cy.visit(url)\n});\n//child window test goes here",
               "err": {},
-              "uuid": "48d29182-646b-4bee-9527-969be453dd45",
-              "parentUUID": "6c67fd23-ce7a-440e-96e7-2bbc5e17cb0b",
+              "uuid": "7c4c7aef-8916-47fb-8797-4f9d0566bdbf",
+              "parentUUID": "1b6e9676-17d4-446d-8ba0-f26a6ad1249d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "48d29182-646b-4bee-9527-969be453dd45"
+            "7c4c7aef-8916-47fb-8797-4f9d0566bdbf"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5678,
+          "duration": 8033,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -76,7 +76,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "e5f5efee-8704-438f-bc1f-625489b81c92",
+      "uuid": "c7fac61f-8410-438b-9cfe-0658de14980a",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\dateCalender.js",
       "file": "cypress\\integration\\examples\\dateCalender.js",
@@ -85,7 +85,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "ce331bd5-baae-4b3e-b1de-0dbe1f9998ae",
+          "uuid": "9d2ff387-0dbc-43ea-b5e3-1a76a6e34f57",
           "title": "handling calenders",
           "fullFile": "",
           "file": "",
@@ -96,29 +96,29 @@
               "title": "date chooser from calender pop up",
               "fullTitle": "handling calenders date chooser from calender pop up",
               "timedOut": null,
-              "duration": 3751,
+              "duration": 5234,
               "state": "passed",
-              "speed": "fast",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.get(\"a[href='#/offers']\").invoke('removeAttr', 'target').click();\ncy.get('.redLogo').should('contain', 'KART');\n//Picking up date\nconst year = 2025;\nconst month = 7;\nconst date = 25;\nconst expectedList = [month, date, year];\ncy.get(\".react-date-picker__calendar-button\").click();\ncy.get(\".react-calendar__navigation__label\").click();\ncy.get(\".react-calendar__navigation__label\").click();\ncy.contains(\"button\", year).click();\ncy.get(\".react-calendar__year-view__months__month\").eq(month - 1).click();\ncy.contains(\"button abbr\", date).click();\n//assertingDate\ncy.get(\".react-date-picker__inputGroup__input\").each(($el1, index, $list) => {\n  cy.wrap($el1).invoke('val').then(value => {\n    expect(value).be.equal(expectedList[index].toString());\n  });\n});",
               "err": {},
-              "uuid": "c961e704-7548-47d8-9bb4-bd168daae69c",
-              "parentUUID": "ce331bd5-baae-4b3e-b1de-0dbe1f9998ae",
+              "uuid": "ea89a616-1d7d-489f-9878-fb843b42e85d",
+              "parentUUID": "9d2ff387-0dbc-43ea-b5e3-1a76a6e34f57",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "c961e704-7548-47d8-9bb4-bd168daae69c"
+            "ea89a616-1d7d-489f-9878-fb843b42e85d"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3751,
+          "duration": 5234,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -134,7 +134,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "f51149d3-20bc-4ce7-9157-556a2be29027",
+      "uuid": "25a0b6c2-cd5b-4671-96ca-294ea0376a89",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\eComAlltem.js",
       "file": "cypress\\integration\\examples\\eComAlltem.js",
@@ -143,7 +143,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "deceab70-aa42-46dd-91fa-b4fa5ba42b71",
+          "uuid": "91f08bf4-75b3-41bb-8080-469d88db28ed",
           "title": "end to end test of Ecommerce website",
           "fullFile": "",
           "file": "",
@@ -154,7 +154,7 @@
               "title": "End to end Ec commerce functionality",
               "fullTitle": "end to end test of Ecommerce website End to end Ec commerce functionality",
               "timedOut": null,
-              "duration": 20212,
+              "duration": 22656,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -163,20 +163,20 @@
               "context": null,
               "code": "cy.get(\"#username\").type('rahulshettyacademy');\ncy.get(\"#password\").type('Learning@830$3mK2');\ncy.contains('label', 'Admin').click();\ncy.get('select').select('Student');\ncy.get('#terms').check();\ncy.get('#signInBtn').click();\ncy.wait(4000);\ncy.url().should('include', 'shop');\n//Verifing shop page\ncy.get('h1.my-4').should('have.text', 'Shop Name');\ncy.get('.card.h-100').find('.btn').each(($e1, index, $list) => {\n  cy.wrap($e1).click();\n});\ncy.get('.btn-primary').invoke('text').then(text => {\n  const number = text.match(/\\d+/)[0]; // extracts digits\n  cy.get('.btn-primary').click();\n  for (let i = 0; i < number; i++) {\n    cy.get('tbody tr').eq(i).find('.text-success').should('contain', 'In Stock');\n  }\n});\ncy.get(\".text-right\").invoke('text').then(text => {\n  const totalPrice = text.match(/\\d+/)[0];\n  if (totalPrice < 500000) {\n    cy.get(\".btn-success\").click();\n    cy.wait(2000);\n  }\n});\ncy.get(\".navbar-brand\").should('contain.text', 'ProtoCommerce Home');\ncy.get('#country').type('ind');\ncy.wait(7000);\ncy.get('.suggestions a').each($e1 => {\n  if ($e1.text() === 'India') {\n    cy.wrap($e1).click();\n  }\n});\ncy.get('#checkbox2').check({\n  force: true\n});\ncy.get('.btn-success').click();\ncy.get('.alert-success').should('include.text', 'Success');\n// prod card\n// cy.get('#exampleInputEmail1') //quantity",
               "err": {},
-              "uuid": "5b33828c-1a50-4087-85e7-89b962d535b4",
-              "parentUUID": "deceab70-aa42-46dd-91fa-b4fa5ba42b71",
+              "uuid": "534d3f2d-37c9-4ddd-bac4-165cba7fd25e",
+              "parentUUID": "91f08bf4-75b3-41bb-8080-469d88db28ed",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5b33828c-1a50-4087-85e7-89b962d535b4"
+            "534d3f2d-37c9-4ddd-bac4-165cba7fd25e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 20212,
+          "duration": 22656,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -192,7 +192,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "60a9a2be-affc-4dbb-8e70-66d2151b2085",
+      "uuid": "1497570d-1cc8-465e-9b9b-c0ea7fe46505",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\eComSelItem.js",
       "file": "cypress\\integration\\examples\\eComSelItem.js",
@@ -201,7 +201,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "000c5cdb-fd0b-4053-9f29-a8662ffa9cf7",
+          "uuid": "86d821d6-8ec0-4150-9b92-518a7bbc8dae",
           "title": "end to end test of Ecommerce website",
           "fullFile": "",
           "file": "",
@@ -212,7 +212,7 @@
               "title": "End to end Ec commerce functionality",
               "fullTitle": "end to end test of Ecommerce website End to end Ec commerce functionality",
               "timedOut": null,
-              "duration": 18815,
+              "duration": 20343,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -221,20 +221,20 @@
               "context": null,
               "code": "const productName = ['Nokia', 'iphone'];\ncy.get(\"#username\").type('rahulshettyacademy');\ncy.get(\"#password\").type('Learning@830$3mK2');\ncy.contains('label', 'Admin').click();\ncy.get('select').select('Student');\ncy.get('#terms').check();\ncy.get('#signInBtn').click();\ncy.wait(4000);\ncy.url().should('include', 'shop');\n//Verifing shop page\ncy.get('h1.my-4').should('have.text', 'Shop Name');\ncy.get('app-card').should('have.length', 4);\ncy.contains('app-card', productName[0]).contains('button', 'Add').click();\ncy.contains('app-card', productName[1]).contains('button', 'Add').click();\ncy.get('.btn-primary').click();\nlet sum = 0;\ncy.get('tr td:nth-child(4) strong').each(($el1, index, $list) => {\n  const total = Number($el1.text().split(' ')[1].trim());\n  sum = sum + total;\n}).then(() => {\n  cy.get('.text-right').invoke('text').then(text => {\n    const totalAmount = Number(text.split(' ')[1].trim());\n    expect(sum).be.equal(totalAmount);\n  });\n});\ncy.get(\".btn-success\").click();\ncy.wait(2000);\ncy.get(\".navbar-brand\").should('contain.text', 'ProtoCommerce Home');\ncy.get('#country').type('ind');\ncy.wait(7000);\ncy.get('.suggestions a').each($e1 => {\n  if ($e1.text() === 'India') {\n    cy.wrap($e1).click();\n  }\n});\ncy.get('#checkbox2').check({\n  force: true\n});\ncy.get('.btn-success').click();\ncy.get('.alert-success').should('include.text', 'Success');",
               "err": {},
-              "uuid": "65be7501-414b-439d-8ca3-59d7374d1739",
-              "parentUUID": "000c5cdb-fd0b-4053-9f29-a8662ffa9cf7",
+              "uuid": "d165b240-61e6-4a32-8362-71ebfc3f0fee",
+              "parentUUID": "86d821d6-8ec0-4150-9b92-518a7bbc8dae",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "65be7501-414b-439d-8ca3-59d7374d1739"
+            "d165b240-61e6-4a32-8362-71ebfc3f0fee"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 18815,
+          "duration": 20343,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -250,7 +250,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "4e6429c9-e80b-4713-a81d-5dc08cda6982",
+      "uuid": "4ee14075-6f0d-4a86-be0e-ad300b6b6a17",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\greenCartTest.js",
       "file": "cypress\\integration\\examples\\greenCartTest.js",
@@ -259,7 +259,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "545c2dac-cbed-43da-94dd-78b742cc5f82",
+          "uuid": "8691c43c-97ae-4e19-aeef-63514a7dd6f1",
           "title": "GreenCart E2E test",
           "fullFile": "",
           "file": "",
@@ -270,7 +270,7 @@
               "title": "adding item to cart",
               "fullTitle": "GreenCart E2E test adding item to cart",
               "timedOut": null,
-              "duration": 10671,
+              "duration": 10180,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -279,20 +279,20 @@
               "context": null,
               "code": "cy.get(\"input[type='search']\").type(\"ca\");\ncy.get(\".search-button\").click();\n//using parent child chaining\ncy.get(\".products\").as('productLocator'); //aliasing\ncy.get('@productLocator').find(\".product\").each(($e1, index, $list) => {\n  let testofProductName = $e1.find('h4.product-name').text();\n  if (testofProductName.includes('Carrot')) {\n    cy.wrap($e1).find('button').click();\n  }\n});\ncy.get('.cart-icon').click();\ncy.get('.cart-items').as('cartItems');\ncy.get('@cartItems').find('.cart-item:visible').should('have.length', 1);\ncy.get('@cartItems').find('.product-name').should('contain.text', 'Carrot');\ncy.get('.action-block:visible').find(\"button[type='button']\").click();\ncy.get('tbody tr:nth-child(1) td:nth-child(2)').should('contain.text', 'Carrot');\ncy.get('.promoCode').type('xyz');\ncy.get('.promoBtn').click();\ncy.wait(4000);\ncy.get('.promoInfo').should('contain.text', 'Invalid code');\ncy.contains(\"Place Order\").click();\ncy.get('.chkAgree').check().should('be.checked');\n//static dropdown\ncy.get('select').select(['Andorra']).should('have.value', 'Andorra');",
               "err": {},
-              "uuid": "7927fffb-f26e-4260-b74a-10e2611f1b64",
-              "parentUUID": "545c2dac-cbed-43da-94dd-78b742cc5f82",
+              "uuid": "9c9f4f31-5484-42ad-b771-924189a18405",
+              "parentUUID": "8691c43c-97ae-4e19-aeef-63514a7dd6f1",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "7927fffb-f26e-4260-b74a-10e2611f1b64"
+            "9c9f4f31-5484-42ad-b771-924189a18405"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 10671,
+          "duration": 10180,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -308,7 +308,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "1cd66c60-02fd-4d60-b42c-31cb4ad94aaa",
+      "uuid": "681967fe-b7ce-4a64-bda7-029b4aa1fc4a",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\iframe.js",
       "file": "cypress\\integration\\examples\\iframe.js",
@@ -317,7 +317,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "568abae2-e6cd-4899-8212-2ef33f5a2291",
+          "uuid": "1581cb31-7879-45a8-9e6e-4e91977f5e1c",
           "title": "Handling Iframes",
           "fullFile": "",
           "file": "",
@@ -328,7 +328,7 @@
               "title": "handling iframe within an page",
               "fullTitle": "Handling Iframes handling iframe within an page",
               "timedOut": null,
-              "duration": 7477,
+              "duration": 7737,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -337,20 +337,20 @@
               "context": null,
               "code": "cy.get('#courses-iframe').then($iframe => {\n  const iframeUrl = $iframe.prop('src');\n  const url = new URL(iframeUrl);\n  const origin = url.origin;\n  const path = url.pathname;\n  cy.origin(origin, {\n    args: {\n      path\n    }\n  }, ({\n    path\n  }) => {\n    cy.visit(path);\n    cy.get(\"a[href='mentorship']\").eq(0).click();\n  });\n});\n// cy.iframe().find(\"a[href='mentorship']\").eq(0).click();",
               "err": {},
-              "uuid": "78efdcdb-6d14-4eab-9ac3-7ac730636966",
-              "parentUUID": "568abae2-e6cd-4899-8212-2ef33f5a2291",
+              "uuid": "59b98447-f480-49be-b6d8-8208fd93c7ff",
+              "parentUUID": "1581cb31-7879-45a8-9e6e-4e91977f5e1c",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "78efdcdb-6d14-4eab-9ac3-7ac730636966"
+            "59b98447-f480-49be-b6d8-8208fd93c7ff"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 7477,
+          "duration": 7737,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -366,7 +366,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "0ab18a33-8d26-4a1d-8a95-6ce5cefb8c3d",
+      "uuid": "855881ce-32df-42cc-8d16-9904598eb3b8",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\login.js",
       "file": "cypress\\integration\\examples\\login.js",
@@ -375,7 +375,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "4afd4f51-7c7a-435e-b768-870d1d049528",
+          "uuid": "502d7a57-8dd3-4c3c-881e-42078413cdc1",
           "title": "end to end test of Ecommerce website",
           "fullFile": "",
           "file": "",
@@ -386,7 +386,7 @@
               "title": "End to end Ec commerce functionality",
               "fullTitle": "end to end test of Ecommerce website End to end Ec commerce functionality",
               "timedOut": null,
-              "duration": 8854,
+              "duration": 9318,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -395,20 +395,20 @@
               "context": null,
               "code": "cy.get(\"#username\").type('rahulshettyacademy');\ncy.get(\"#password\").type('Learning@830$3mK2');\ncy.contains('label', 'Admin').click();\ncy.get('select').select('Student');\ncy.get('#terms').check();\ncy.get('#signInBtn').click();\ncy.wait(4000);\ncy.url().should('include', 'shop'); // after switching next tab",
               "err": {},
-              "uuid": "e0ea8691-23d8-4364-a3c0-56b4c16dac34",
-              "parentUUID": "4afd4f51-7c7a-435e-b768-870d1d049528",
+              "uuid": "9249f801-b861-4be6-93dc-7eb4642cf134",
+              "parentUUID": "502d7a57-8dd3-4c3c-881e-42078413cdc1",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "e0ea8691-23d8-4364-a3c0-56b4c16dac34"
+            "9249f801-b861-4be6-93dc-7eb4642cf134"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8854,
+          "duration": 9318,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -424,7 +424,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "eda3296f-ac88-4532-85a4-a4d0055825f4",
+      "uuid": "636d17f1-42b7-424a-8b0d-3af32ec51143",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\mouseOver.js",
       "file": "cypress\\integration\\examples\\mouseOver.js",
@@ -433,7 +433,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "ac9d5654-a10b-4e11-a20b-dddcc2f19ab5",
+          "uuid": "e6a43f86-2ee9-47b3-bbf2-cd74cb25ccf3",
           "title": "handling mousover",
           "fullFile": "",
           "file": "",
@@ -444,7 +444,7 @@
               "title": "mouseover",
               "fullTitle": "handling mousover mouseover",
               "timedOut": null,
-              "duration": 7173,
+              "duration": 6945,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -453,20 +453,20 @@
               "context": null,
               "code": "cy.get('.mouse-hover-content').invoke('show');\ncy.contains('Top').click({\n  force: true\n});\ncy.url().should('include', 'top');\ncy.get('.mouse-hover-content').invoke('show'); //invok\ncy.contains('Reload').click({\n  force: true\n});\ncy.url().should('not.include', 'top');",
               "err": {},
-              "uuid": "97f61126-6779-4927-a2c5-ad334d57d69a",
-              "parentUUID": "ac9d5654-a10b-4e11-a20b-dddcc2f19ab5",
+              "uuid": "4051ef05-a233-4f69-9826-0fbb280980f7",
+              "parentUUID": "e6a43f86-2ee9-47b3-bbf2-cd74cb25ccf3",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "97f61126-6779-4927-a2c5-ad334d57d69a"
+            "4051ef05-a233-4f69-9826-0fbb280980f7"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 7173,
+          "duration": 6945,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -482,7 +482,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "2ee5ffe7-2fa6-4a9b-b400-acf76a2eb96c",
+      "uuid": "5aec0280-62cb-4f8b-b3ba-bdd6debbd19d",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\tableTesting.js",
       "file": "cypress\\integration\\examples\\tableTesting.js",
@@ -491,7 +491,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c8364faa-e092-4dde-90b6-2f9725e0d9b4",
+          "uuid": "a9d6dd12-3385-4f14-b782-96ee659c442f",
           "title": "automating tables",
           "fullFile": "",
           "file": "",
@@ -502,29 +502,29 @@
               "title": "chcking price of a purticular course",
               "fullTitle": "automating tables chcking price of a purticular course",
               "timedOut": null,
-              "duration": 5921,
+              "duration": 4787,
               "state": "passed",
-              "speed": "medium",
+              "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.get(\".table-display tr td:nth-child(2)\").each(($el1, index, $list) => {\n  const courseText = $el1.text();\n  if (courseText.includes('python')) {\n    cy.get('.table-display tr td:nth-child(2)', {\n      timeout: 10000\n    }).eq(index).next().then(price => {\n      const priceText = price.text();\n      expect(priceText).to.equal('25');\n      cy.log('verifid');\n    });\n  }\n});",
               "err": {},
-              "uuid": "a8c755bb-fa0a-4e9d-abbb-91cbbf525030",
-              "parentUUID": "c8364faa-e092-4dde-90b6-2f9725e0d9b4",
+              "uuid": "b70211f8-d90b-41e2-9b66-5b0edde3143e",
+              "parentUUID": "a9d6dd12-3385-4f14-b782-96ee659c442f",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a8c755bb-fa0a-4e9d-abbb-91cbbf525030"
+            "b70211f8-d90b-41e2-9b66-5b0edde3143e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5921,
+          "duration": 4787,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -540,7 +540,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "69de26a4-64dd-43ea-a601-879e2eaf0e41",
+      "uuid": "d7bdb4a9-9fff-40bf-a097-7a2b869f3ba3",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\test1.js",
       "file": "cypress\\integration\\examples\\test1.js",
@@ -549,7 +549,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "df3b009d-469b-4c63-ae03-5af60abf8aa3",
+          "uuid": "e00d407f-b2d0-4729-9c37-c8c0d6748b4b",
           "title": "My first test suite",
           "fullFile": "",
           "file": "",
@@ -560,7 +560,7 @@
               "title": "first test case",
               "fullTitle": "My first test suite first test case",
               "timedOut": null,
-              "duration": 3619,
+              "duration": 4086,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -569,20 +569,20 @@
               "context": null,
               "code": "cy.visit(\"https://rahulshettyacademy.com/seleniumPractise/#/\");\ncy.get(\"input[type='search']\").type(\"ca\");\ncy.get(\".search-button\").click();\n//using parent child chaining\ncy.get(\".products\").as('productLocator'); //aliasing\ncy.get(\"@productLocator\").find(\".product\").should('have.length', 4);\ncy.get('@productLocator').find(\".product\").each(($e1, index, $list) => {\n  let testofProductName = $e1.find('h4.product-name').text();\n  if (testofProductName.includes('Carrot')) {\n    cy.wrap($e1).find('button').click();\n  }\n});\ncy.get('.brand').should('have.text', 'GREENKART');\ncy.get('.brand').then(function (logoElement) {\n  logoElement.text();\n  cy.log(logoElement.text());\n});",
               "err": {},
-              "uuid": "2b17f18a-3c20-4e4c-8928-27dff938c4d3",
-              "parentUUID": "df3b009d-469b-4c63-ae03-5af60abf8aa3",
+              "uuid": "510234a5-85a4-4d7f-b89a-99fa7309417c",
+              "parentUUID": "e00d407f-b2d0-4729-9c37-c8c0d6748b4b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2b17f18a-3c20-4e4c-8928-27dff938c4d3"
+            "510234a5-85a4-4d7f-b89a-99fa7309417c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3619,
+          "duration": 4086,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -598,7 +598,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "fc1602e0-a3d9-4aab-94f7-4fc193a81008",
+      "uuid": "a45086b4-bd55-446c-9ddc-ad35e4636ca8",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\automationPracticePage.js",
       "file": "cypress\\integration\\examples\\automationPracticePage.js",
@@ -607,7 +607,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "87b118cd-b4dd-4365-ac24-9e6495eb141b",
+          "uuid": "50fb77ca-e219-496e-b1c9-55ba60b38649",
           "title": "automation practice page",
           "fullFile": "",
           "file": "",
@@ -618,7 +618,7 @@
               "title": "practicing on different UI elements",
               "fullTitle": "automation practice page practicing on different UI elements",
               "timedOut": null,
-              "duration": 8497,
+              "duration": 9587,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -627,20 +627,20 @@
               "context": null,
               "code": "//Selecting single check box and asserting the same\ncy.get(\"input[type='checkbox']\").check('option1').should('be.checked');\n// selecting check boxes\ncy.get(\"input[type='checkbox']\").check(['option2', 'option3']);\n//Handking static Dropdown\ncy.get('select').select('option2').should('have.value', 'option2');\n//dynamic dropdown\ncy.get('#autocomplete').type('ind');\ncy.get('.ui-menu-item div').each(($e1, index, $lisy) => {\n  if ($e1.text() === 'India') {\n    cy.wrap($e1).click();\n  }\n});\n//Visible /Invisible elements\ncy.get('#autocomplete').should('have.value', 'India');\ncy.get('#displayed-text').should('be.visible');\ncy.get(\"#hide-textbox\").click();\ncy.get('#displayed-text').should('not.be.visible');\n//Radio buttons\ncy.get(\"input[value='radio1']\").check().should('be.checked');\n//window alert\ncy.get(\"#alertbtn\").click();\ncy.on('window:alert', str => {\n  expect(str).to.equal('Hello , share this practice page and share your knowledge');\n});\n//window confirm\ncy.get('#confirmbtn').click();\ncy.on('window:confirm', str => {\n  expect(str).to.equal('Hello , Are you sure you want to confirm?');\n});",
               "err": {},
-              "uuid": "f4ace7ea-ff48-4d30-9cfc-7bd7f7a1ae99",
-              "parentUUID": "87b118cd-b4dd-4365-ac24-9e6495eb141b",
+              "uuid": "a9fe90cb-4bb6-4485-a9cc-3ee2aaeb0c47",
+              "parentUUID": "50fb77ca-e219-496e-b1c9-55ba60b38649",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f4ace7ea-ff48-4d30-9cfc-7bd7f7a1ae99"
+            "a9fe90cb-4bb6-4485-a9cc-3ee2aaeb0c47"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8497,
+          "duration": 9587,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
