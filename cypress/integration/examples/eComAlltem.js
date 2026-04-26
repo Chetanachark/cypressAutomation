@@ -1,3 +1,5 @@
+import HomePage from "../../pageObjects/HomePage";
+import ProductPage from "../../pageObjects/ProductPage";
 describe("end to end test of Ecommerce website",()=>{
 
     before(function(){
@@ -11,26 +13,25 @@ describe("end to end test of Ecommerce website",()=>{
     
     it("End to end Ec commerce functionality",function(){
         
-        cy.visit(this.data.url)
-        cy.get("#username").type(this.data.userName);
-        cy.get("#password").type(this.data.password);
-        cy.contains('label','Admin').click();
-        cy.get('select').select(this.data.role);
-        cy.get('#terms').check();
-        cy.get('#signInBtn').click();
+        const homePage = new HomePage();
+        const productPage = new ProductPage();
         
-        cy.url().should('include',this.data.shopUrl);
+        homePage.goTo(this.data.url);
+        homePage.login(this.data.userName, this.data.password, this.data.role)
+        
+       
         //Verifing shop page
+        productPage.productUrl().should('include', this.data.shopUrl);
+        productPage.getShopName().should('have.text',this.data.shopName);
+        productPage.addProducts();
+        productPage.checkOutButton().invoke('text').then((text) => {
+        const noOfItemInCart = text.match(/\d+/)[0]; // extracts digits
+        expect(Number(noOfItemInCart)).to.be.lessThan(5); 
+        productPage.checkOutButton().click();
 
-        cy.get('h1.my-4').should('have.text',this.data.pageName);
-        cy.get('.card.h-100').find('.btn').each(($e1, index, $list)=>{
-            cy.wrap($e1).click();
-            
-        })
-        cy.get('.btn-primary') .invoke('text').then((text) => {
-        const number = text.match(/\d+/)[0];   // extracts digits
-        cy.get('.btn-primary').click();
-            for (let i = 0; i < number; i++) {
+
+      
+            for (let i = 0; i < Number(noOfItemInCart); i++) {
                  cy.get('tbody tr')
                 .eq(i)
                 .find('.text-success')

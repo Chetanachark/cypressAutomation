@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-10T07:33:45.610Z",
-    "end": "2026-04-10T07:34:06.264Z",
-    "duration": 20654,
+    "start": "2026-04-26T04:23:14.426Z",
+    "end": "2026-04-26T04:23:33.354Z",
+    "duration": 18928,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "cd455bd8-a0c5-4afa-ad10-86738807d71f",
+      "uuid": "791d061f-548e-472c-874c-1e4322c3a25c",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\automationPracticePage.js",
       "file": "cypress\\integration\\examples\\automationPracticePage.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "060c00d2-93cc-4322-b9a5-ed9191952d73",
+          "uuid": "10fdb7f9-b7cf-446f-bee5-360263cc200d",
           "title": "automation practice page",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "practicing on different UI elements",
               "fullTitle": "automation practice page practicing on different UI elements",
               "timedOut": null,
-              "duration": 15336,
+              "duration": 13734,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "//Selecting single check box and asserting the same\ncy.get(\"input[type='checkbox']\").check('option1').should('be.checked');\n// selecting check boxes\ncy.get(\"input[type='checkbox']\").check(['option2', 'option3']);\n//Handking static Dropdown\ncy.get('select').select('option2').should('have.value', 'option2');\n//dynamic dropdown\ncy.get('#autocomplete').type('ind');\ncy.get('.ui-menu-item div').each(($e1, index, $lisy) => {\n  if ($e1.text() === 'India') {\n    cy.wrap($e1).click();\n  }\n});\n//Visible /Invisible elements\ncy.get('#autocomplete').should('have.value', 'India');\ncy.get('#displayed-text').should('be.visible');\ncy.get(\"#hide-textbox\").click();\ncy.get('#displayed-text').should('not.be.visible');\n//Radio buttons\ncy.get(\"input[value='radio1']\").check().should('be.checked');\n//window alert\ncy.get(\"#alertbtn\").click();\ncy.on('window:alert', str => {\n  expect(str).to.equal('Hello , share this practice page and share your knowledge');\n});\n//window confirm\ncy.get('#confirmbtn').click();\ncy.on('window:confirm', str => {\n  expect(str).to.equal('Hello , Are you sure you want to confirm?');\n});",
               "err": {},
-              "uuid": "d5841352-5244-45cd-bfcb-e7504b501918",
-              "parentUUID": "060c00d2-93cc-4322-b9a5-ed9191952d73",
+              "uuid": "eb481661-621b-4503-87cd-7a016b4b1a68",
+              "parentUUID": "10fdb7f9-b7cf-446f-bee5-360263cc200d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d5841352-5244-45cd-bfcb-e7504b501918"
+            "eb481661-621b-4503-87cd-7a016b4b1a68"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 15336,
+          "duration": 13734,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

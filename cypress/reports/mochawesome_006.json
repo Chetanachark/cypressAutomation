@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-10T07:35:52.786Z",
-    "end": "2026-04-10T07:36:05.676Z",
-    "duration": 12890,
+    "start": "2026-04-26T04:25:29.864Z",
+    "end": "2026-04-26T04:25:45.729Z",
+    "duration": 15865,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "97663c2a-faa3-4fd0-a3de-def122bc79f3",
+      "uuid": "61c2c5d1-531c-48b7-86af-4a2aba453025",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\iframe.js",
       "file": "cypress\\integration\\examples\\iframe.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c2ea5bb8-d673-40a9-b025-66bc541d0f7a",
+          "uuid": "b91a6d66-fc3c-448c-bcf3-ad48336eefd3",
           "title": "Handling Iframes",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "handling iframe within an page",
               "fullTitle": "Handling Iframes handling iframe within an page",
               "timedOut": null,
-              "duration": 9688,
+              "duration": 11021,
               "state": "passed",
-              "speed": "medium",
+              "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.get('#courses-iframe').then($iframe => {\n  const iframeUrl = $iframe.prop('src');\n  const url = new URL(iframeUrl);\n  const origin = url.origin;\n  const path = url.pathname;\n  cy.origin(origin, {\n    args: {\n      path\n    }\n  }, ({\n    path\n  }) => {\n    cy.visit(path);\n    cy.get(\"a[href='mentorship']\").eq(0).click();\n  });\n});\n// cy.iframe().find(\"a[href='mentorship']\").eq(0).click();",
               "err": {},
-              "uuid": "a114c1d9-38a3-43c8-b643-b7a62d2c5f0c",
-              "parentUUID": "c2ea5bb8-d673-40a9-b025-66bc541d0f7a",
+              "uuid": "f046b906-c3e7-44d0-82bb-8bac3c569caa",
+              "parentUUID": "b91a6d66-fc3c-448c-bcf3-ad48336eefd3",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a114c1d9-38a3-43c8-b643-b7a62d2c5f0c"
+            "f046b906-c3e7-44d0-82bb-8bac3c569caa"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9688,
+          "duration": 11021,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

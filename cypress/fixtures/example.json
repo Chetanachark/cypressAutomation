@@ -3,12 +3,13 @@
   "userName": "rahulshettyacademy",
   "password": "Learning@830$3mK2",
   "role": "Student",
-  "shopUrl": "shop",
-  "pageName": "Shop Name",
+  "shopUrl": "/shop",
+  "shopName": "Shop Name",
   "checkStock":"In Stock",
   "homePageName": "ProtoCommerce Home",
   "country":"India",
-  "successMessage":"Success"
+  "successMessage":"Success",
+  "maxPrice":500000
 
 
   

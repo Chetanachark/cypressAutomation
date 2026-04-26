@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-10T07:35:09.787Z",
-    "end": "2026-04-10T07:35:32.798Z",
-    "duration": 23011,
+    "start": "2026-04-26T04:24:36.521Z",
+    "end": "2026-04-26T04:25:04.651Z",
+    "duration": 28130,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "e4472504-4a4c-429b-bdc1-9cd164130913",
+      "uuid": "e17a26bf-df3c-4049-a439-5f3d0ce1f7ba",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\eComSelItem.js",
       "file": "cypress\\integration\\examples\\eComSelItem.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "ff8fab50-436d-4dee-a18e-e843d1201e61",
+          "uuid": "969b531d-eb46-450c-b9be-b9a8de6ea262",
           "title": "end to end test of Ecommerce website",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "End to end Ec commerce functionality",
               "fullTitle": "end to end test of Ecommerce website End to end Ec commerce functionality",
               "timedOut": null,
-              "duration": 21196,
+              "duration": 24019,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const productName = ['Nokia', 'iphone'];\ncy.get(\"#username\").type('rahulshettyacademy');\ncy.get(\"#password\").type('Learning@830$3mK2');\ncy.contains('label', 'Admin').click();\ncy.get('select').select('Student');\ncy.get('#terms').check();\ncy.get('#signInBtn').click();\ncy.wait(4000);\ncy.url().should('include', 'shop');\n//Verifing shop page\ncy.get('h1.my-4').should('have.text', 'Shop Name');\ncy.get('app-card').should('have.length', 4);\ncy.contains('app-card', productName[0]).contains('button', 'Add').click();\ncy.contains('app-card', productName[1]).contains('button', 'Add').click();\ncy.get('.btn-primary').click();\nlet sum = 0;\ncy.get('tr td:nth-child(4) strong').each(($el1, index, $list) => {\n  const total = Number($el1.text().split(' ')[1].trim());\n  sum = sum + total;\n}).then(() => {\n  cy.get('.text-right').invoke('text').then(text => {\n    const totalAmount = Number(text.split(' ')[1].trim());\n    expect(sum).be.equal(totalAmount);\n  });\n});\ncy.get(\".btn-success\").click();\ncy.wait(2000);\ncy.get(\".navbar-brand\").should('contain.text', 'ProtoCommerce Home');\ncy.get('#country').type('ind');\ncy.wait(7000);\ncy.get('.suggestions a').each($e1 => {\n  if ($e1.text() === 'India') {\n    cy.wrap($e1).click();\n  }\n});\ncy.get('#checkbox2').check({\n  force: true\n});\ncy.get('.btn-success').click();\ncy.get('.alert-success').should('include.text', 'Success');",
               "err": {},
-              "uuid": "070d6dc5-9c26-4a79-bb3b-d6b749601805",
-              "parentUUID": "ff8fab50-436d-4dee-a18e-e843d1201e61",
+              "uuid": "a4de5b79-1fd1-4611-aa0f-bcbae2e58fc3",
+              "parentUUID": "969b531d-eb46-450c-b9be-b9a8de6ea262",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "070d6dc5-9c26-4a79-bb3b-d6b749601805"
+            "a4de5b79-1fd1-4611-aa0f-bcbae2e58fc3"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 21196,
+          "duration": 24019,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

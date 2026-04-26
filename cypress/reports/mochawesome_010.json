@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-10T07:36:45.324Z",
-    "end": "2026-04-10T07:36:53.024Z",
-    "duration": 7700,
+    "start": "2026-04-26T04:26:36.372Z",
+    "end": "2026-04-26T04:26:45.698Z",
+    "duration": 9326,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "d9248373-4ee7-4872-a351-74853a17c00b",
+      "uuid": "7679e2c1-6fa3-403e-8c54-a645d1b446bc",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\test1.js",
       "file": "cypress\\integration\\examples\\test1.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "9f68bd28-ef33-47fe-b444-c166aa691d1a",
+          "uuid": "239c1fa8-315b-4425-b99b-f1fdc0f2e570",
           "title": "My first test suite",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "first test case",
               "fullTitle": "My first test suite first test case",
               "timedOut": null,
-              "duration": 5653,
+              "duration": 5614,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit(\"https://rahulshettyacademy.com/seleniumPractise/#/\");\ncy.get(\"input[type='search']\").type(\"ca\");\ncy.get(\".search-button\").click();\n//using parent child chaining\ncy.get(\".products\").as('productLocator'); //aliasing\ncy.get(\"@productLocator\").find(\".product\").should('have.length', 4);\ncy.get('@productLocator').find(\".product\").each(($e1, index, $list) => {\n  let testofProductName = $e1.find('h4.product-name').text();\n  if (testofProductName.includes('Carrot')) {\n    cy.wrap($e1).find('button').click();\n  }\n});\ncy.get('.brand').should('have.text', 'GREENKART');\ncy.get('.brand').then(function (logoElement) {\n  logoElement.text();\n  cy.log(logoElement.text());\n});",
               "err": {},
-              "uuid": "85153d1e-466c-47cc-9edb-cfcff52f77fc",
-              "parentUUID": "9f68bd28-ef33-47fe-b444-c166aa691d1a",
+              "uuid": "88bb4458-88ea-4a8d-8cc9-9a1b0784ace1",
+              "parentUUID": "239c1fa8-315b-4425-b99b-f1fdc0f2e570",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "85153d1e-466c-47cc-9edb-cfcff52f77fc"
+            "88bb4458-88ea-4a8d-8cc9-9a1b0784ace1"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5653,
+          "duration": 5614,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
