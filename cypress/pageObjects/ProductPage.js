@@ -17,6 +17,8 @@ class ProductPage
     {
        return cy.get('.btn-primary');
     }
-       
+    checkItemsInStock(){
+        
+    }
 
 } export default ProductPage;
