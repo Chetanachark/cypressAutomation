@@ -1,5 +1,6 @@
 import HomePage from "../../pageObjects/HomePage";
 import ProductPage from "../../pageObjects/ProductPage";
+import CheckOut from "../../pageObjects/CheckOut";
 describe("end to end test of Ecommerce website",()=>{
 
     before(function(){
@@ -15,6 +16,7 @@ describe("end to end test of Ecommerce website",()=>{
         
         const homePage = new HomePage();
         const productPage = new ProductPage();
+        const checkOut = new CheckOut();
         
         homePage.goTo(this.data.url);
         homePage.login(this.data.userName, this.data.password, this.data.role)
@@ -57,9 +59,10 @@ describe("end to end test of Ecommerce website",()=>{
                     cy.wrap($e1).click();
                 }
             })
-            cy.get('#checkbox2').check({ force: true });
-            cy.get('.btn-success').click({ force: true });
-            cy.get('.alert-success').should('include.text',this.data.successMessage);
+           
+            checkOut.agree().check({ force: true });
+            checkOut.purchase().click({ force: true });
+            checkOut.alert().should('include.text',this.data.successMessage);
         
         
          
