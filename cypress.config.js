@@ -1,24 +1,27 @@
 const { defineConfig } = require("cypress");
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const {
+  addCucumberPreprocessorPlugin,
+} = require("@badeball/cypress-cucumber-preprocessor");
+const {
+  createEsbuildPlugin,
+} = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 
 module.exports = defineConfig({
-  defaultCommandTimeout :6000,
-  projectId: 'iriqwm',
-
   e2e: {
-    specPattern: "cypress/integration/**/*.js",
-    supportFile: false,
+    specPattern: "cypress/e2e/features/**/*.feature",
 
-    reporter: 'mochawesome',
-    reporterOptions: {
-      reportDir: 'cypress/reports',
-      overwrite: false,
-      html: false,
-      json: true
+    async setupNodeEvents(on, config) {
+      await addCucumberPreprocessorPlugin(on, config);
+
+      on(
+        "file:preprocessor",
+        createBundler({
+          plugins: [createEsbuildPlugin(config)],
+        })
+      );
+
+      return config;
     },
-
-    retries: {
-      runMode: 2,
-      openMode: 0
-    }
-  }
+  },
 });

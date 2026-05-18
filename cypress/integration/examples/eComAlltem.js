@@ -1,6 +1,6 @@
-import HomePage from "../../pageObjects/HomePage";
-import ProductPage from "../../pageObjects/ProductPage";
-import CheckOut from "../../pageObjects/CheckOut";
+import HomePage from "../../e2e/pageObjects/HomePage";
+import ProductPage from "../../e2e/pageObjects/ProductPage";
+import CheckOut from "../../e2e/pageObjects/CheckOut";
 describe("end to end test of Ecommerce website",()=>{
 
     before(function(){
