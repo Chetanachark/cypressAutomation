@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const crypto = require("crypto")
 const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const {
   addCucumberPreprocessorPlugin,

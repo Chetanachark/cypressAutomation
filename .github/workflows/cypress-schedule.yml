@@ -1,50 +1,38 @@
 name: Cypress Regression Pipeline
 
-# -------------------------------
-# 🔹 When should this workflow run?
-# -------------------------------
 on:
-  # Run every 4 hours (better than every 30 mins to save runner minutes)
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 */4 * * *'   # every 4 hours
 
-  # Allow manual trigger from GitHub UI
   workflow_dispatch:
 
-  # Run automatically when PR is raised to main branch ,,,ok ok
   pull_request:
     branches:
       - main
 
-# -------------------------------
-# 🔹 Jobs Section
-# -------------------------------
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
 
-    # Prevent workflow from hanging forever
     timeout-minutes: 30
+
+    # ✅ FIX ADDED HERE (important for crypto / openssl issues)
+    env:
+      NODE_OPTIONS: --openssl-legacy-provider
 
     steps:
 
-      # -------------------------------
-      # 1️⃣ Checkout repository code
-      # -------------------------------
+      # 1️⃣ Checkout code
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # -------------------------------
-      # 2️⃣ Setup Node.js version
-      # -------------------------------
+      # 2️⃣ Setup Node
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18.16.0
 
-      # -------------------------------
-      # 3️⃣ Cache npm dependencies (speeds up builds)
-      # -------------------------------
+      # 3️⃣ Cache npm
       - name: Cache npm
         uses: actions/cache@v3
         with:
@@ -53,49 +41,32 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      # -------------------------------
-      # 4️⃣ Install dependencies cleanly
-      # npm ci ensures exact lockfile install (best practice for CI)
-      # -------------------------------
+      # 4️⃣ Install dependencies
       - name: Install Dependencies
         run: npm ci
 
-      # -------------------------------
-      # 5️⃣ Clean old reports before execution
-      # -------------------------------
+      # 5️⃣ Clean reports
       - name: Clean old reports
         run: npm run clean:reports
 
-      # -------------------------------
-      # 6️⃣ Run Cypress Tests
-      # If using Cypress Dashboard, you can add --record --parallel
-      # -------------------------------
+      # 6️⃣ Run Cypress tests
       - name: Run Cypress Tests
         run: npm run cy:run
 
-      # -------------------------------
-      # 7️⃣ Merge Mochawesome JSON reports
-      # -------------------------------
-      - name: Merge Mochawesome JSON Reports
+      # 7️⃣ Merge reports
+      - name: Merge Mochawesome Reports
         run: npm run mocha:merge
 
-      # -------------------------------
-      # 8️⃣ Generate final HTML report
-      # -------------------------------
-      - name: Generate Final HTML Report
+      # 8️⃣ Generate HTML report
+      - name: Generate HTML Report
         run: npm run mocha:report
 
-      # -------------------------------
-      # 9️⃣ Generate custom regression summary (if script exists)
-      # -------------------------------
-      - name: Generate Regression Summary
+      # 9️⃣ Generate summary
+      - name: Generate Summary
         run: npm run summary
 
-      # -------------------------------
-      # 🔟 Upload all artifacts (even if test fails)
-      # This includes reports, screenshots & videos
-      # -------------------------------
-      - name: Upload Test Artifacts
+      # 🔟 Upload artifacts
+      - name: Upload Artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
