@@ -305,6 +305,7 @@
     "p-locate": "^5.0.0",
     "package-json-from-dist": "^1.0.1",
     "pad-right": "^0.2.2",
+    "papaparse": "^5.5.3",
     "parent-module": "^1.0.1",
     "parse-json": "^5.2.0",
     "path-exists": "^4.0.0",
@@ -460,5 +461,13 @@
     "yup": "^1.7.1"
   },
   "keywords": [],
-  "description": ""
+  "description": "cypress automation project",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chetanachark/cypressAutomation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Chetanachark/cypressAutomation/issues"
+  },
+  "homepage": "https://github.com/Chetanachark/cypressAutomation#readme"
 }

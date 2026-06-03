@@ -1,12 +1,8 @@
 const { defineConfig } = require("cypress");
-const crypto = require("crypto")
-const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const webpack = require("@cypress/webpack-preprocessor");
 const {
   addCucumberPreprocessorPlugin,
 } = require("@badeball/cypress-cucumber-preprocessor");
-const {
-  createEsbuildPlugin,
-} = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 
 module.exports = defineConfig({
   e2e: {
@@ -17,10 +13,28 @@ module.exports = defineConfig({
 
       on(
         "file:preprocessor",
-        createBundler({
-          plugins: [createEsbuildPlugin(config)],
+        webpack({
+          webpackOptions: {
+            resolve: {
+              extensions: [".js"],
+            },
+            module: {
+              rules: [
+                {
+                  test: /\.js$/,
+                  exclude: /node_modules/,
+                  use: {
+                    loader: "babel-loader",
+                  },
+                },
+              ],
+            },
+          },
         })
       );
+
+      config.env.stepDefinitions =
+        "cypress/e2e/features/**/*.steps.js";
 
       return config;
     },
